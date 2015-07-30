@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node compare-number.js --use_strict",
+    "start": "node answer-generator.js --use_strict",
     "test": "jasmine"
   },
   "dependencies": {
