@@ -14,11 +14,10 @@ CompareNumber.prototype.compare = function(answers,inputs){
           n++;
         }
       }
-    }
-  }
-
-   var  result = m + 'A' + n +'B';
-   return result;
+    } 
  }
+ var  result = m + 'A' + n +'B';
+ return result;
+}
 
 module.exports = CompareNumber;

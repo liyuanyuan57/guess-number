@@ -1,13 +1,18 @@
 'use strict';
 
-var AnswerGenerator = require('../answer-generator.js');
+var AnswerGenerator = require('../main/answer-generator.js');
 
 describe('AnswerGenerator',function(){
   describe('#generator()',function(){
     var answerGenerator,answers;
     beforeEach(function(){
-      answerGenerator = new AnswerGenerator();
-        answers = answerGenerator.generator();
+      var callcount = 0;
+      spyOn(Math, 'random').and.callFake(function(){
+        var randomNumbers = [0.1,0.1,0.2,0.3,0.4];
+        return randomNumbers[callcount++];
+     });
+      answerGenerator = new AnswerGenerator(Math);
+      answers = answerGenerator.generator();
     });
 
     it('can return a number',function(){
@@ -21,12 +26,12 @@ describe('AnswerGenerator',function(){
        expect(b).toBe(false);
     });
 
-    it('can return a number and the length of it is 4',function(){
+  it('can return length should be 4',function(){
       var result = answers.length;
       expect(result).toBe(4);
     });
 
-    it('can return a no-repeat number',function(){
+    it('can return every digir should not repeat',function(){
       var count = 0;
       for(var i = 0; i < answers.lenth; i++){
         for(var j = i+1; j <answers.length; j++)
@@ -38,8 +43,9 @@ describe('AnswerGenerator',function(){
      expect(count).toBe(0);
     });
 
-    it('can return a random number',function(){
-    
+    it('should be a random reasult',function(){
+
+      expect(answers).toBe('1234');
     });
 
   });

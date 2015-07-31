@@ -1,6 +1,6 @@
 'use strict';
 
-var CompareNumber = require('../compare-number.js');
+var CompareNumber = require('../main/compare-number.js');
 
 describe('compareNumber',function(){
   describe('#compare()',function(){

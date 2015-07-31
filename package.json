@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node answer-generator.js --use_strict",
-    "test": "jasmine"
+    "start": "node ./main/answer-generator.js --use_strict",
+    "test": "jasmine ./spec/guess-integr-spec.js"
   },
   "dependencies": {
     "lodash": "^3.10.0"
